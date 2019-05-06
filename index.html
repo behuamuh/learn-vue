@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ol>
+    <li>
+      <div id="app1">text</div>
+    </li>
+    <li>
+      <div id="app2">{{ text }}</div>
+    </li>
+    <li>
+      <div id="app3" v-html="text"></div>
+    </li>
+    <li>
+        <div id="app4">
+          <p v-html="text1">{{}}</p>
+          <p>!!!</p>
+          <p v-html="text2">{{}}</p>          
+        </div>
+    </li>
+    <li>
+        <div id="app5">
+          <div v-bind:id='attr'></div>
+        </div>
+    </li>
+    <li>
+        <div id="app6" :class="str">text</div>
+    </li>
+    <li>
+        <div id="app7" :style="style">text</div>
+    </li>
+    <li>
+        <div id="app8">
+          <p v-if="show">text1</p>
+          <p v-else>text2</p>          
+        </div>
+    </li>
+    <li>
+      <div id="app9">
+        <ul>
+          <li v-for="letter in letters">{{ letter }}</li>
+        </ul>        
+      </div>
+    </li>
+    <li>
+      <div id="app10" v-html="getText()"></div>
+    </li>
+    <li>
+      <div id="app11">text {{ getNum1() + getNum2() }}</div>
+    </li>
+    <li>
+      <div id="app12">имя: {{ name }}, возраст: {{ age }}</div>
+    </li>
+    <li>
+      <div id="app13"><button @click="showMessage">Alert</button></div>
+    </li>
+    <li>
+      <div id="app14"><button @click="showName">Alert</button></div>
+    </li>
+    <li>
+      <div id="app15">
+        имя: {{ name }}, возраст: {{ age }}
+        <button @click="changeData">Change</button>
+      </div>
+    </li>
+    <li>
+      <div id="app16">
+        {{ `${ show ? 'Привет' : 'Пока'} ${name}` }}
+        <button @click="changeData">Change</button>
+      </div>
+    </li>
+    <li>
+      <div id="app17">
+        <p v-if="show">имя: {{ name }}, возраст: {{ age }}</p>
+        <button @click="changeData">Change</button>
+      </div>
+    </li>
+    <li>
+      <div id="app18">
+        <p v-if="show">имя: {{ name }}, возраст: {{ age }}</p>
+        <button @click="changeData">Change</button>
+      </div>
+    </li>
+    <li>
+      <div id="app19">
+        <p v-if="show">имя: {{ name }}, возраст: {{ age }}</p>
+        <button @click="changeData">{{ !show ? 'Show' : 'Hide' }}</button>
+      </div>
+    </li>
+    <li>
+      <div id="app20">
+        <ul>
+          <li v-for="name in names">{{ name }}</li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div id="app21">
+        <ul>
+          <li v-for="(name, index) in names">{{ name }} - {{ index + 1 }}</li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div id="app22">
+        <ul>
+          <li v-for="href in hrefs">
+            <a :href="href.href">{{ href.text }}</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ol>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="script.js">
+    
+  </script>
+</body>
+</html>
