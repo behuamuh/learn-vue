@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <a href="./index.html">На главную</a>
+  <ol start="27">
+    <li>
+      <div id="app1">
+        <input type="text" v-model="input">
+        <p>{{input}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app2">
+        <input type="text" v-model="input">
+        <p>{{input.toUpperCase()}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app3">
+        Введите ваш возраст
+        <input type="text" v-model="input">
+        <p>Вы родились в {{year}} году</p>
+      </div>
+    </li>
+    <li>
+      <div id="app4">
+        <input type="text" v-model="input">
+        <p>{{user[0]}}</p>
+        <p>{{user[1]}}</p>
+        <p>{{user[2]}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app5">
+        <input type="text" v-model="input">
+        <button @click="setValue">Send</button><br>
+        <p>{{value}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app6">
+        <input type="number" v-model="num1">
+        <input type="number" v-model="num2">
+        <button @click="getSumm">Summ</button><br>
+        <p>{{summ}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app7">
+        <input type="text" v-model="first">
+        <input type="text" v-model="second">
+        <input type="text" v-model="third">
+        <button @click="getFullName">Summ</button><br>
+        <p>{{fullName}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app8">
+        <ul>
+          <li v-for="name in names">{{ name }}</li>
+        </ul>
+        <input type="text" v-model="input">
+        <button @click="addItem">Add</button>
+      </div>
+    </li>
+    <li>
+      <div id="app9">
+        <ul>
+          <li v-for="(name, index) in names">{{ name }}
+            <button @click="deleteItem(index)">Delete</button>
+          </li>
+        </ul>
+        <input type="text" v-model="input">
+        <button @click="addItem">Add</button>
+      </div>
+    </li>
+    <li>
+      <div id="app10">
+        <ul>
+          <li v-for="href in hrefs">
+            <a :href="href.href">{{href.text}}</a>
+          </li>
+        </ul>
+        <input type="text" v-model="href">
+        <input type="text" v-model="text">
+        <button @click="addItem">Add</button>
+      </div>
+    </li>
+  </ol>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="./script2.js"></script>
+</body>
+</html>

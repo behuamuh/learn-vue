@@ -196,3 +196,46 @@ const app22 = new Vue({
     ]
   },
 });
+
+const app23 = new Vue({
+  el: '#app23',
+  data: {
+    names: ['Коля', 'Вася', 'Петя', 'Иван', 'Дима'],
+  },
+});
+
+const app24 = new Vue({
+  el: '#app24',
+  data: {
+    names: ['Коля', 'Вася', 'Петя', 'Иван', 'Дима'],
+  },
+  methods: {
+    addItem: function() {
+      this.names = [...this.names, 'Пункт'];
+    },
+  }
+});
+
+const app25 = new Vue({
+  el: '#app25',
+  data: {
+    names: ['Коля', 'Вася', 'Петя', 'Иван', 'Дима'],
+  },
+  methods: {
+    deleteItem: function() {
+      this.names = this.names.slice(0, -1);
+    },
+  }
+});
+
+const app26 = new Vue({
+  el: '#app26',
+  data: {
+    names: ['Коля', 'Вася', 'Петя', 'Иван', 'Дима'],
+  },
+  methods: {
+    deleteItem: function(index) {
+      this.names = this.names.filter((_, _index) => index !== _index);
+    },
+  }
+});
