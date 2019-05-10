@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="./index.html">На главную</a>
+  <ol start="39">
+    <li>
+      <div id="app1">
+        <textarea v-model="text" cols="30" rows="2"></textarea>
+        <p>{{text}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app2">
+        <input type="checkbox" v-model="checked">
+        <p>{{checked}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app3">
+        <input type="checkbox" v-model="checked">
+        <p v-show="checked">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis vitae illum rerum similique eum magni? Est, magnam maiores sunt id quas ad, mollitia temporibus sequi distinctio culpa libero aut qui.</p>
+      </div>
+    </li>
+    <li>
+      <div id="app4">
+        <select v-model='selected'>
+          <option disabled value="">Select city</option>
+          <option>Абакан</option>
+          <option>Азов</option>
+          <option>Александров</option>
+          <option>Алексин</option>
+          <option>Альметьевск</option>
+          <option>Анапа</option>
+          <option>Ангарск</option>
+        </select>
+        <p>{{selected}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app5">
+        <select v-model="selected">
+          <option v-for="(city, index) in cities" :value="index">{{city}}</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div id="app6">
+        <input type="radio" v-model="selected" value="one">
+        <input type="radio" v-model="selected" value="two">
+        <input type="radio" v-model="selected" value="three"><br>
+        <p>{{selected}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app7">
+        <textarea v-model="input" cols="30" rows="2"></textarea>
+        <button @click="addText">Add</button>
+        <p v-for="text in texts">{{text}}</p>
+      </div>
+    </li>
+    <li>
+      <div id="app8">
+        <select v-model="selected">
+          <option v-for="(color, index) in colors" :value="index">{{color}}</option>
+        </select>
+        <p :style="{ background: colors[selected] }">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti itaque, ipsam similique quas quaerat quasi? Fugiat, sit nam ut tempora illum sint aut consequuntur optio est tenetur assumenda vitae veritatis?</p>
+      </div>
+    </li>
+    <li>
+      <div id="app9">
+        <input type="radio" v-model="checked" value="checked">Checked <br>
+        <input type="radio" v-model="checked" value="">Unchecked <br>
+        <input type="checkbox" :checked="checkbox">
+      </div>
+    </li>
+  </ol>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="./script3.js"></script>
+</body>
+
+</html>

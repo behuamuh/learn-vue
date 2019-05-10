@@ -147,3 +147,39 @@ const app10 = new Vue({
     },
   }
 });
+
+const app11 = new Vue({
+  el: '#app11',
+  data: {
+    names: ['Коля', 'Вася', 'Петя', 'Иван', 'Дима'],
+    input: '',
+  },
+  methods: {
+    deleteItem: function() {
+      const index = parseInt(this.input) - 1;
+      this.names = this.names.filter((_, _index) => _index !== index);
+      this.input = '';
+    },
+  }
+});
+
+const app12 = new Vue({
+  el: '#app12',
+  data: {
+    users: [
+      {name: 'Коля', age: 30},
+      {name: 'Вася', age: 40},
+      {name: 'Петя', age: 50},
+    ],
+    name: '',
+    age: '',
+  },
+  methods: {
+    addUser: function() {
+      const { name, age } = this;
+      console.log(name, age)
+      this.users = [...this.users, { name, age }];
+      this.name = this.age = '';
+    }
+  }
+});
