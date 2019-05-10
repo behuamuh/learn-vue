@@ -81,6 +81,50 @@
         <input type="checkbox" :checked="checkbox">
       </div>
     </li>
+    <li>
+      <div id="app10">
+        <select v-model="selected">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <p v-show="selected === '1'">1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, quo.</p>
+        <p v-show="selected === '2'">2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, quo.</p>
+        <p v-show="selected === '3'">3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, quo.</p>
+        <p></p>
+        <p></p>
+      </div>
+    </li>
+    <li>
+      <div id="app11">
+        <select>
+          <option v-for="option in options">{{option}}</option>
+        </select>
+        <input type="text" v-model="input">
+        <button @click="addOption">Add</button>
+      </div>
+    </li>
+    <li>
+      <div id="app12">
+        <input type="checkbox" v-model="checked">
+        <input :disabled="checked" type="text">
+      </div>
+    </li>
+    <li>
+      <div id="app13">
+        <select v-model="day">
+          <option v-for="(day, index) in new Array(31).fill(0)">{{index + 1}}</option>
+        </select>
+        <select v-model="month">
+          <option v-for="(day, index) in new Array(12).fill(0)">{{index + 1}}</option>
+        </select>
+        <select v-model="year">
+          <option v-for="(day, index) in new Array(100).fill(0)">{{1920 + index}}</option>
+        </select>
+        <br>
+        <p>{{new Date(year, month - 1, day).toString()}}</p>
+      </div>
+    </li>
   </ol>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="./script3.js"></script>

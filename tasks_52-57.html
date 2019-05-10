@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <a href="./index.html">На главную</a>
+  <ol start="52">
+    <li>
+      <div id="app1">
+        <ul>
+          <li v-for="(li, index) in list" :style="{textDecoration: checked[index] ? 'line-through' : 'none'}">
+            <input type="checkbox" v-model="checked[index]">
+            {{li}}
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div id="app2">
+        <table>
+          <tr v-for="user in users">
+            <td><input type="checkbox" v-model="user.checked"></td>
+            <td>{{user.name}}</td>
+            <td>{{user.surname}}</td>
+            <td>{{user.salary}}</td>
+          </tr>
+        </table>
+        <p>Total: {{salarySumm}}</p>
+      </div>
+    </li>
+    <li>
+      <ul id="app3">
+        <li v-for="(li, index) in list">
+          <input type="checkbox" v-model="checked[index]">
+          <p v-show="checked[index]">{{li}}</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div id="app4">
+        <ul>
+          <li v-for="(user, index) in users">
+            <input type="checkbox" v-model="checked[index]">
+            {{user.name}}{{checked[index] ? ` ${user.surname} ${user.age}` : ''}}
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div id="app5">
+        <ul>
+          <li v-for="(item, index) in list" @click="setActive(index)">
+            <input type="text" v-model="list[index]" v-show="checked[index]" @blur="unsetActive(index)">
+            {{item}}
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div id="app6">
+        <table>
+          <tr v-for="(user, index) in users">
+            <td>
+              <input type="text" v-model="users[index].name" v-show="checked[index].name">
+              {{user.name}}
+              <button @click="toggleActive(index, 'name')">Change</button>
+            </td>
+            <td>
+              <input type="text" v-model="users[index].age" v-show="checked[index].age">
+              {{user.age}}
+              <button @click="toggleActive(index, 'age')">Change</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </li>
+  </ol>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="./script4.js"></script>
+</body>
+</html>

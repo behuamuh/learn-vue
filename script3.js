@@ -82,3 +82,46 @@ const app9 = new Vue({
     }
   }
 });
+
+const app10 = new Vue({
+  el: '#app10',
+  data: {
+    selected: '1',
+  },
+});
+
+const app11 = new Vue({
+  el: '#app11',
+  data: {
+    input: '',
+    options: [],
+  },
+  methods: {
+    addOption: function() {
+      this.options = [...this.options, this.input];
+      this.input = '';
+    },
+  },
+});
+
+const app12 = new Vue({
+  el: '#app12',
+  data: {
+    checked: false,
+  },
+});
+
+const app13 = new Vue({
+  el: '#app13',
+  data: {
+    day: 1,
+    month: 1,
+    year: 1,
+  },
+  created: function() {
+    const date = new Date();
+    this.day = date.getDate();
+    this.month = date.getMonth() + 1;
+    this.year = date.getFullYear();
+  }
+})
